@@ -10,3 +10,18 @@ function multiply(a,b){
 function divide(a,b){
     return(a/b);
 }
+
+function operate(operator,a,b){
+    if(operator=='+'){
+        return add(a,b);
+    }
+    if(operator=='-'){
+        return subtract(a,b);
+    }
+    if(operator=='x'){
+        return multiply(a,b);
+    }
+    if(operator=='/'){
+        return divide(a,b);
+    }
+}
