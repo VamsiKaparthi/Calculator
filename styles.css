@@ -44,3 +44,9 @@ button{
 button:hover{
     color: black;
 }
+.display{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
