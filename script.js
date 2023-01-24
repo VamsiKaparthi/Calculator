@@ -25,3 +25,11 @@ function operate(operator,a,b){
         return divide(a,b);
     }
 }
+d=document.getElementById('disp');
+function display(m){
+    d.textContent = `${m}`;
+}
+buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click',()=>display(button.id));
+});
