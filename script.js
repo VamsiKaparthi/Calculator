@@ -31,5 +31,5 @@ function display(m){
 }
 buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
-    button.addEventListener('click',()=>display(button.id));
+    button.addEventListener('click',()=>display(button.id))
 });
