@@ -25,11 +25,13 @@ function operate(operator,a,b){
         return divide(a,b);
     }
 }
+let string = '';
 d=document.getElementById('disp');
-function display(m){
-    d.textContent = `${m}`;
-}
 buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
-    button.addEventListener('click',()=>display(button.id))
+    button.addEventListener('click',(e)=>{
+        console.log(e.target)
+        string += e.target.innerText;
+        document.getElementById('disp').textContent = string;
+    })
 });
