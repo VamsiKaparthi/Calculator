@@ -63,6 +63,15 @@ buttons.forEach(button => {
             string='';
         }
         else if(e.target.innerText=='='){
+            if(i==1){
+                num.num1=Number(string);
+            }
+            else{
+                num.num2=Number(string);
+                num.num1 = operate(num.operator,num.num1,num.num2)
+                //num.num1 = Number((num.num1)).toFixed(3)
+            }
+            document.getElementById('disp').textContent = Number(num.num1).toFixed(3);
             
         }
         if(e.target.innerText=='AC'){
