@@ -39,8 +39,14 @@ d=document.getElementById('disp');
 buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click',(e)=>{
-        if(operators.indexOf(e.target.innerText)==-1){
-            string += e.target.innerText;
+        if(operators.indexOf(e.target.innerText)==-1||e.target.innerText=='↺'){
+            if(e.target.innerText=='↺'){
+                string = string.slice(0,-1);
+            }
+            else{
+                string += e.target.innerText;
+            }
+            
             document.getElementById('disp').textContent = string;
             
             console.log(num.num1);
