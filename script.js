@@ -33,6 +33,7 @@ let num={
 };
 let i=1;
 let operator = '';
+let check = true;
 const operators = ['+','-','x','/','=','AC','↺']
 const numeric_operators = ['+','-','x','/']
 d=document.getElementById('disp');
@@ -44,19 +45,29 @@ buttons.forEach(button => {
                 string = string.slice(0,-1);
             }
             else{
-                string += e.target.innerText;
+                if(e.target.innerText=='.'){
+                    if(check==true){
+                        string+=e.target.innerText
+                        check=false;
+                    }
+                }
+                else{
+                    string += e.target.innerText;
+                }
+                
             }
-            
             document.getElementById('disp').textContent = string;
             
             console.log(num.num1);
             console.log(num.num2);
         }
         else if(numeric_operators.indexOf(e.target.innerText)!==-1){
+            check=true;
             if(i==1){
                 num.num1=Number(string);
             }
             else{
+                
                 num.num2=Number(string);
                 num.num1 = operate(num.operator,num.num1,num.num2)
                 //num.num1 = Number((num.num1)).toFixed(3)
@@ -86,6 +97,7 @@ buttons.forEach(button => {
             num.num2=0;
             operator='';
             string='';
+            check = true;
             document.getElementById('disp').textContent=string;
         }
     })
