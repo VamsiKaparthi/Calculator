@@ -24,7 +24,6 @@ body{
 .buttons{
     height: 500px;
     width:350px;
-   // background-color: aqua;
     display: flex;
     column-gap: 100px;
     justify-content: space-between;

@@ -33,40 +33,45 @@ let num={
 };
 let i=1;
 let operator = '';
-const operators = ['+','-','x','/','=','clear']
-const numeric_operators = ['+','-','x','/','=']
+const operators = ['+','-','x','/','=','AC','↺']
+const numeric_operators = ['+','-','x','/']
 d=document.getElementById('disp');
 buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
     button.addEventListener('click',(e)=>{
         if(operators.indexOf(e.target.innerText)==-1){
-            console.log(e.target)
             string += e.target.innerText;
+            document.getElementById('disp').textContent = string;
+            
+            console.log(num.num1);
+            console.log(num.num2);
+        }
+        else if(numeric_operators.indexOf(e.target.innerText)!==-1){
             if(i==1){
-                num.num1 = Number(string);
-            }
-            else if(i==2){
-                num.num2 = Number(string);
-                console.log(operate(num.operator,num.num1,num.num2));
+                num.num1=Number(string);
             }
             else{
-                num.num1=operate(num.operator,num.num1,num.num2);
-                num.num2 = Number(string);
+                num.num2=Number(string);
+                num.num1 = operate(num.operator,num.num1,num.num2)
+                //num.num1 = Number((num.num1)).toFixed(3)
             }
-            
-            console.log(num.num1)
-            console.log(num.num2)
-            document.getElementById('disp').textContent = string;
-        }
-        if(numeric_operators.indexOf(e.target.innerText)!==-1){
-            console.log(e.target)
-            string = e.target.innerText;
-            document.getElementById('disp').textContent = operate(num.operator,num.num1,num.num2);
-            num.operator = string;
-            
-            string='';
+            num.operator = e.target.innerText;
             i++;
+            if(i>2){
+                document.getElementById('disp').textContent = Number(num.num1).toFixed(3);
+            }
+            string='';
+        }
+        else if(e.target.innerText=='='){
             
+        }
+        if(e.target.innerText=='AC'){
+            i=1;
+            num.num1=0;
+            num.num2=0;
+            operator='';
+            string='';
+            document.getElementById('disp').textContent=string;
         }
     })
 });
