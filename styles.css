@@ -6,7 +6,7 @@ body{
 .container{
     height: 700px;
     width:450px;
-    background-color: rgb(63, 67, 73);
+    background-color: rgb(233, 228, 228);
     border-radius: 20px;
     padding-top: 50px;
     display: flex;
@@ -17,9 +17,10 @@ body{
 .display{
     height: 140px;
     width:350px;
-    background-color: rgb(103, 106, 107);
+    background-color: rgb(71, 104, 87);
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 3%;
+    border: 5px solid black;
 }
 .buttons{
     height: 500px;
@@ -31,7 +32,7 @@ body{
     align-items: center;
 }
 button{
-    background-color: rgb(63, 67, 73);
+    background-color: rgb(151, 146, 146);
     font-size: 30px;
     border: none;
     cursor: pointer;
@@ -39,10 +40,13 @@ button{
     margin: auto;
     display: block;
     color: white;
-    font-weight: 500;
+    font-weight: bolder;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 button:hover{
-    color: black;
+    background-color: black;
 }
 .display{
     display: flex;
@@ -50,6 +54,9 @@ button:hover{
     align-items: center;
     padding: 10px;
 }
-.dot{
-    width: 29px;
+button.operator{
+    background-color:rgb(245, 185, 75);
+}
+button.operator:hover{
+    background-color: rgb(168, 214, 75);
 }
