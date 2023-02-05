@@ -47,6 +47,7 @@ button{
 }
 button:hover{
     background-color: black;
+    
 }
 .display{
     display: flex;
@@ -56,6 +57,7 @@ button:hover{
 }
 button.operator{
     background-color:rgb(245, 185, 75);
+    
 }
 button.operator:hover{
     background-color: rgb(168, 214, 75);
